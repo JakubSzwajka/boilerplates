@@ -1,0 +1,14 @@
+steps:
+    - name: node:16
+      entrypoint: npm
+      args: ['install', '--force']
+    
+    - name: node:16
+      entrypoint: npm
+      args: ['run-script', 'build', 'env_name=env_value']
+
+artifacts:
+  objects:
+    location: 'gs://wsb-cloudbuilds/build/'
+    paths: ['build/*']
+  
